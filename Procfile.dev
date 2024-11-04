@@ -1,0 +1,3 @@
+backend: ./vendor/bin/sail up
+queue: sleep 3; ./vendor/bin/sail php artisan queue:work
+frontend: sleep 3; ./vendor/bin/sail npm run dev
