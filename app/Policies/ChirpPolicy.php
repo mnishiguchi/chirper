@@ -44,7 +44,8 @@ class ChirpPolicy
      */
     public function delete(User $user, Chirp $chirp): bool
     {
-        //
+        // anyone that is authorized to update a resource
+        return $this->update($user, $chirp);
     }
 
     /**
