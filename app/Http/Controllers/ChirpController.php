@@ -14,7 +14,11 @@ class ChirpController extends Controller
      */
     public function index(): View
     {
-        return view('chirps.index');
+        return view('chirps.index', [
+            // eager-load every Chirps that are associated with user
+            // in reverse-chronological order
+            'chirps' => Chirp::with('user')->latest()->get(),
+        ]);
     }
 
     /**
